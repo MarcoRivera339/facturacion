@@ -1,1 +1,58 @@
-<p>edit-product works!</p>
+<form (ngSubmit)="editarProducto(formulario)" #formulario="ngForm"
+    class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md dark:bg-gray-800 dark:text-white my-12">
+    <h2 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">Editar Producto</h2>
+
+     <!-- Codigo del producto -->
+    <div class="mb-4">
+        <label for="codigo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Codigo</label>
+        <input [(ngModel)]="producto.codigo" type="text" id="codigo" name="codigo" class="block w-full p-3 text-gray-900 border border-black rounded-lg bg-white text-sm 
+      placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 
+      dark:bg-white dark:border-black dark:placeholder-gray-400 dark:text-black" placeholder="Ej: Shampoo Anticaspa"
+            required>
+    </div>
+
+    <!-- Nombre del producto -->
+    <div class="mb-4">
+        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+        <input [(ngModel)]="producto.nombre" type="text" id="nombre" name="nombre" class="block w-full p-3 text-gray-900 border border-black rounded-lg bg-white text-sm 
+      placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 
+      dark:bg-white dark:border-black dark:placeholder-gray-400 dark:text-black" placeholder="Ej: Shampoo Anticaspa"
+            required>
+    </div>
+
+    <!-- Descripción -->
+    <div class="mb-4">
+        <label for="descripcion"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
+        <textarea [(ngModel)]="producto.descripcion" id="descripcion" name="descripcion" rows="3" class="block w-full p-3 text-gray-900 border border-black rounded-lg bg-white text-sm 
+      placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 
+      dark:bg-white dark:border-black dark:placeholder-gray-400 dark:text-black"
+            placeholder="Ej: Producto para cabello seco..." required></textarea>
+    </div>
+
+    <!-- URL de la imagen -->
+    <div class="mb-6">
+        <label for="imagen" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">URL de la
+            Imagen</label>
+        <input [(ngModel)]="producto.imagen" type="url" id="imagen" name="imagen" class="block w-full p-3 text-gray-900 border border-black rounded-lg bg-white text-sm 
+    placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 
+    dark:bg-white dark:border-black dark:placeholder-gray-400 dark:text-black"
+            placeholder="Ej: https://ejemplo.com/imagen.jpg" required>
+    </div>
+
+
+    <!-- Botones -->
+    <div class="flex flex-col sm:flex-row justify-between gap-4">
+        <button type="submit" class="w-full sm:w-1/2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 
+      font-medium rounded-lg text-sm px-5 py-3 text-center dark:bg-blue-600 
+      dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Guardar Producto
+        </button>
+
+        <a routerLink="/listarProductos" class="w-full sm:w-1/2 text-white bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 
+  font-medium rounded-lg text-sm px-5 py-3 text-center dark:bg-gray-500 
+  dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+            Regresar
+        </a>
+    </div>
+</form>
